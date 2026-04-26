@@ -1,0 +1,199 @@
+/* --- CONFIGURATION ET POLICES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Outfit:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --secondary: #a855f7;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --warning-amber: #fbbf24;
+}
+
+/* --- CENTRAGE GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--text-main);
+    line-height: 1.6;
+    
+    /* Centrage parfait du contenu */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrage horizontal */
+    justify-content: flex-start; /* Aligné en haut mais centré horizontalement */
+    padding: 40px 20px;
+}
+
+/* --- BANDEAU DE PRÉVENTION (CENTRE) --- */
+.maintenance-banner {
+    background: rgba(245, 158, 11, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 16px;
+    margin-bottom: 40px;
+    max-width: 800px;
+    width: 100%;
+    padding: 15px 25px;
+    animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre le texte dans le bandeau */
+    gap: 15px;
+    text-align: center;
+}
+
+.maintenance-banner p {
+    margin-bottom: 0;
+    color: var(--warning-amber);
+    font-size: 0.9rem;
+}
+
+/* --- TITRES ET TEXTES --- */
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 40px;
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+/* --- BOUTONS --- */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+button:hover {
+    background: white;
+    color: #0f172a;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* --- VIDÉO ET CANVAS --- */
+#videoContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre la vidéo horizontalement */
+    margin-bottom: 40px;
+}
+
+video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 24px;
+    border: 2px solid var(--glass-border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+/* --- RÉSULTATS --- */
+#result {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 20px;
+}
+
+.result-box {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: left; /* Le texte à l'intérieur reste à gauche pour la lisibilité */
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; scale: 0.95; }
+    to { opacity: 1; scale: 1; }
+}
+
+/* --- LOADER --- */
+#loading {
+    margin: 20px 0;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .controls { flex-direction: column; align-items: center; }
+    button { width: 100%; max-width: 300px; }
+    .banner-content { flex-direction: column; }
+}
+/* Style pour le bouton secondaire (Code Source) */
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed var(--glass-border);
+    color: #94a3b8;
+}
+
+.secondary-btn:hover {
+    background: var(--glass-bg);
+    border-style: solid;
+    border-color: var(--secondary);
+    color: white;
+}
+
+/* Footer centré en bas */
+footer {
+    margin-top: auto; /* Pousse le footer vers le bas si le contenu est court */
+    padding: 40px 0 20px 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: rgba(148, 163, 184, 0.5);
+}

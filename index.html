@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Détection d'Allergènes</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    
+    <!-- TensorFlow.js et COCO-SSD pour la détection d'objets -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    
+    <!-- Tesseract.js pour la reconnaissance OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v2"></script>
+</head>
+<body>
+    <div class="maintenance-banner">
+    <div class="banner-content">
+        <span class="banner-icon">⚠️</span>
+        <p><strong>Site en cours d'amélioration :</strong> La détection automatique est un outil d'assistance. Des allergènes peuvent être oubliés. <strong>Vérifiez toujours l'étiquette physique.</strong></p>
+    </div>
+    </div>
+    <h1>Détection d'Allergènes</h1>
+    <p>Ce projet utilise la reconnaissance d'image pour identifier les ingrédients d'un produit alimentaire et les lire à voix haute, tout en mettant en évidence les allergènes potentiels.</p>
+    
+   <div class="controls">
+    <button id="startButton">📷 Démarrer la caméra</button>
+    <button id="captureButton" style="display:none;">📸 Capturer l'image</button>
+    <button id="uploadButton">📁 Uploader une image</button>
+    <button onclick="window.open('https://github.com/harryruto/DetecteurAllerg-nes')" class="secondary-btn">💻 Code Source</button>
+    <input type="file" id="fileInput" accept="image/*" style="display:none;">
+    </div>
+
+    <div id="videoContainer" style="display:none;">
+        <video id="video" width="400" height="300" autoplay></video>
+        <canvas id="canvas" width="400" height="300" style="display:none;"></canvas>
+    </div>
+    
+    <div id="result"></div>
+    <div id="loading" style="display:none;">⏳ Traitement en cours...</div>
+    
+    <script src="script.js"></script>
+
+    <footer>
+        <p>© 2026 - Projet Détection d'Allergènes</p>
+    </footer>
+</body>
+</html>
+
+    
