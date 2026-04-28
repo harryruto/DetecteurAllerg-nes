@@ -1,4 +1,4 @@
-# Détecteur d'allèrgène 
+# Détecteur d'allergènes
 
 Ce site à pour but d'aider les personnes à trouver les allergènes dans leurs aliments
 
